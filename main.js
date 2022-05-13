@@ -61,12 +61,7 @@ console.log(information.interest.outdoor[0].hiking[2])
 
 // TODO: write your code below this line
 function anagramFunc(a, b) {
-    let len1 = a.length;
-    let len2 = b.length;
-    if(len1 !== len2){
-       console.log('Invalid Input');
-       return
-    }
+    
     let str1 = a.split('').sort().join('');
     let str2 = b.split('').sort().join('');
     if(str1 === str2){
@@ -89,10 +84,10 @@ console.log(anagramFunc("jupiter", "jubiter")); // expected output: false
 
 // TODO: write your code below this line
 function palindromeFunc(str) {
-    var re = /[\W_]/g;
-    var lowRegStr = str.toLowerCase().replace(re, '');
-    var reverseStr = lowRegStr.split('').reverse().join(''); 
-    return reverseStr === lowRegStr;
+    let re = /[\W_]/g;
+    let normalString = str.toLowerCase().replace(re, '');
+    let reverseString = normalString.split('').reverse().join(''); 
+    return normalString === reverseString;
   }
 // TODO: write your code above this line
 
@@ -154,8 +149,8 @@ console.log(getGrade(25)); // expected output: B
 
 // TODO: write your code below this line
 class Polygon {
-    constructor(args) {
-        this.values = args;
+    constructor(sides) {
+        this.values = sides;
     }
 
     perimeter() {
@@ -258,13 +253,13 @@ console.log(fizzBuzz());
 // I put this one here to tease up your brain for a few minutes.
 
 // TODO: write your code below this line
-var baseBallPointer = function(ops) {
-    var nums = []
-    for (var op of ops) {
-      if (RegExp('[0-9]').test(op)) {
-        nums.push(op);
+let baseBallPointer = function(points) {
+    let nums = []
+    for (let point of points) {
+      if (RegExp('[0-9]').test(point)) {
+        nums.push(point);
       } else {
-        switch(op) {
+        switch(point) {
           case 'C':
             nums.pop();
             break;
@@ -277,8 +272,8 @@ var baseBallPointer = function(ops) {
         }
       }
     }
-    var sum = 0;
-    for (var num of nums) {
+    let sum = 0;
+    for (let num of nums) {
       sum += parseInt(num);
     }
     return sum;
